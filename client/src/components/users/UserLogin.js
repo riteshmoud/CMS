@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../NavBar'
+import Sidebar from '../Sidebar'
 import Dashboard from './Dashboard'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,21 +51,20 @@ const UserLogin = () => {
     return (
         
         <BrowserRouter>
-        <div className="min-h-screen">
-            <div className="flex justify-center bg-[#4b86b4]">
-            <NavBar links={[
-                    {name:'Dashboard',route:'/user_login/dashboard'},
-                    {name:'Lodge Complaint',route:'/user_login/lodge_complaint'},
-                    {name:'Change Password',route:'/user_login/change_password'},
-                    {name:'My Account',route:'/user_login/my_account'},
-            ]}/>
-            <button className="px-4 py-2 text-2xl bg-red-500 text-white self-center rounded-xl" onClick={userLogout}>
-                Logout
-            </button>
+        <div className="h-screen flex">
+            <div className="bg-[#1f2937] h-full flex flex-col justify-between ">
+                <Sidebar links={[
+                        {name:'Dashboard',route:'/user_login/dashboard'},
+                        {name:'Lodge Complaint',route:'/user_login/lodge_complaint'},
+                        {name:'Change Password',route:'/user_login/change_password'},
+                        {name:'My Account',route:'/user_login/my_account'},
+                ]}/>
+                <button className="px-4 py-2 text-lg bg-red-500 text-white self-center rounded-xl w-full m-2" onClick={userLogout}>
+                    Logout
+                </button>
             </div>
-           
-            
-                <div className="flex justify-center items-center min-h-screen bg-[#2a4d69] relative">
+            <div className='grow flex items-center justify-center overflow-auto relative'>
+                {/* <div className="flex justify-center items-center min-w-[70%] py-6"> */}
                     <Switch>
                         <Route path='/user_login/dashboard' exact component={()=>(<Dashboard user='user'/>)}/>
                         <Route path='/user_login/lodge_complaint' exact component={LodgeComplaint}/>
@@ -73,7 +72,8 @@ const UserLogin = () => {
                         <Route path='/user_login/my_account' exact component={UserProfile}/>
                         <Route path='/user_login/fetch_complaints' component={() => (<ComplaintTable headings={['ID','Category','Sub Category','Date/Time','Status','Remarks','']} user='user'/>)}/>
                     </Switch>
-                </div>
+                {/* </div>    */}
+            </div>
         </div>
         </BrowserRouter>
     )

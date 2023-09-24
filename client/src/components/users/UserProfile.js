@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Logo from '../Logo'
 import { useEffect } from 'react';
+import './style/login.css'
 
 
 const UserProfile = () => {
@@ -51,7 +52,14 @@ const UserProfile = () => {
         }else{
             axios.post("http://localhost:3500/api/user_update",{
                 formData
-            }).then(()=>{
+            }).then((res)=>{
+                console.log(res);
+                // setFormData({
+                //     fullname: res.data.fullname,
+                //     email: res.data.email,
+                //     contact: res.data.contact,
+                //     state: res.data.state
+                // })
                 toast.success("Profile Updated !", {
                     position: toast.POSITION.TOP_CENTER
                 });
@@ -70,36 +78,36 @@ const UserProfile = () => {
     }
 
     return (
-        <div className='max-w-4xl flex justify-center flex-col bg-[#adcbe3] rounded-xl p-4 m-8'>
-            <h1 className="text-3xl text-center p-4">
+        <div className='max-w-4xl flex justify-center flex-col bg-[#1f2937] rounded-xl p-4 m-8'>
+            <h1 className="text-2xl p-2 text-white">
                 Profile
             </h1>
             <div className="flex justify-center items-center flex-col">
-                <form onSubmit={onFormSubmit} className="text-black">
-                    <div className="m-4">
-                        <label htmlFor="fullname" className="text-2xl py-4">Name</label>
-                        <input type="text" name = "fullname" id = "fullname" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" value={formData.fullname} onChange={onFormChange}/>
+                <form onSubmit={onFormSubmit} className="text-black grid grid-cols-2 gap-x-4 gap-y-2">
+                    <div className="m-2">
+                        <label htmlFor="fullname" className="text-lg py-4">Name</label>
+                        <input type="text" name = "fullname" id = "fullname" className="p-2 text-lg w-[100%] border-black border-2 rounded-xl" value={formData.fullname} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <label htmlFor="email" className="text-2xl py-4">Email</label>
-                        <input type="email" name = "email" id = "email" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" value={formData.email} onChange={onFormChange}/>
+                    <div className="m-2">
+                        <label htmlFor="email" className="text-lg py-4">Email</label>
+                        <input type="email" name = "email" id = "email" className="p-2 text-lg w-[100%] border-black border-2 rounded-xl" value={formData.email} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                    <label htmlFor="state" className="text-2xl py-4">State</label>
-                        <input type="text" name = "state" id = "state" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" value={formData.state} onChange={onFormChange}/>
+                    <div className="m-2">
+                    <label htmlFor="state" className="text-lg py-4">State</label>
+                        <input type="text" name = "state" id = "state" className="p-2 text-lg w-[100%] border-black border-2 rounded-xl" value={formData.state} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                    <label htmlFor="contact" className="text-2xl py-4">Contact</label>
-                        <input type="number" name = "contact" id = "contact" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl"  value={formData.contact} onChange={onFormChange}/>
+                    <div className="m-2">
+                    <label htmlFor="contact" className="text-lg py-4">Contact</label>
+                        <input type="number" name = "contact" id = "contact" className="p-2 text-lg w-[100%] border-black border-2 rounded-xl"  value={formData.contact} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-4 text-2xl font-medium rounded-xl text-white' value='Update'/>
+                    <div className="m-2 col-span-full">
+                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-2 text-lg font-medium rounded-xl text-white' value='Update'/>
                     </div>
                 </form>
             </div>
-            <div className='flex justify-center items-center'>
+            {/* <div className='flex justify-center items-center'>
                 <Logo/>
-            </div>
+            </div> */}
             {/* <ToastContainer/> */}
         </div>
     )

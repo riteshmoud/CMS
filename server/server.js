@@ -115,13 +115,15 @@ app.post('/api/user_signin',async (req,res)=>{
 app.post('/api/user_update',async (req,res)=>{
     const {fullname,email,contact,state} = req.body.formData
     // const userExists = await userExists(email)
-    if(email === req.session.user.email || !await userExists(email)){
+    console.log(req.session);
+    if(!await userExists(email) || email === req.session.user.email){
                 const sqlUpdate = 'UPDATE users SET fullname = ?,email = ?,contact = ?,state = ? WHERE users.user_id = ?'
-                const [results] = await db.execute(
+                const results = await db.execute(
                     sqlUpdate,
                     [fullname,email,contact,state,req.session.user.user_id]
                 );
-                res.status(200).send('User updated')
+                req.session.user = {...req.session.user,fullname,email,contact,state}
+                res.status(200).send({fullname,email,contact,state})
     }else{
         res.status(400).send("User already exists")
     }
@@ -143,6 +145,7 @@ app.post('/api/user_update_password',async (req,res)=>{
                         sqlUpdate,
                         [hashPwd,req.session.user.user_id],
                     );
+                    req.session.user = {...req.session.user,password:hashPwd}
                     res.status(200).send('User password updated')
                 }
             })
@@ -281,7 +284,7 @@ app.post('/api/admin_login',async (req,res)=>{
 })
 
 app.post('/api/change_status', async (req,res)=>{
-        const {comp_id,status} = req.body.formData
+        const {comp_id,status} = req.body
         const updateStatus = 'UPDATE complaints SET status = ? WHERE comp_id = ?'
         const [results] = await db.execute(
             updateStatus,
@@ -321,17 +324,17 @@ app.get('/api/get_users',async (req,res)=>{
         []
     );
     if(results.length === 0){
-        res.status(400).send('No users found')
+        res.status(200).send([])
     }else{
         res.status(200).send(results)
     }
 })
 
-app.get('/api/delete_user',async (req,res)=>{
+app.delete('/api/delete_user/:id',async (req,res)=>{
     const delUsers = 'DELETE FROM users WHERE user_id = ?'
     const [results] = await db.execute(
         delUsers,
-        [req.query.user_id]
+        [req.params.id]
     );
     res.status(200).send("User deleted")
 })

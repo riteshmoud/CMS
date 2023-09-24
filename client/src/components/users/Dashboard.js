@@ -41,26 +41,26 @@ const Dashboard = (props) => {
             }
         }
         fetchComp()
-    })
+    },[])
 
     return (
-        <div className='bg-[#adcbe3] w-[50%] rounded-xl p-2'>
-            <div className="p-4 text-3xl text-white font-bold flex justify-between items-center m-2 bg-red-400 rounded-xl">
+        <div className='bg-[#1f2937] rounded-xl p-2 min-w-[70%]'>
+            <div className="p-4 text-xl text-white font-bold flex justify-between items-center m-2 bg-[#111827] rounded-xl">
                 {comp_status.pending} Pending Complaints 
                 <Link to={`/${props.user}_login/fetch_complaints/pending`}>
-                    <button id = "pending" className="py-2 px-4 text-2xl bg-[#1f306e] rounded-xl text-white">View</button>
+                    <button id = "pending" className="py-2 px-4 text-md bg-[#1f306e] rounded-xl text-white">View</button>
                 </Link>
             </div>
-            <div className="p-4 text-3xl text-white font-bold flex justify-between items-center m-2 bg-green-600 rounded-xl">
+            <div className="p-4 text-xl text-white font-bold flex justify-between items-center m-2 bg-[#111827] rounded-xl">
                 {comp_status.completed} Complaints Resolved
                 <Link to={`/${props.user}_login/fetch_complaints/completed`}>
-                    <button id = "completed" className="py-2 px-4 text-2xl bg-[#1f306e] rounded-xl text-white">View</button>
+                    <button id = "completed" className="py-2 px-4 text-md bg-[#1f306e] rounded-xl text-white">View</button>
                 </Link>
             </div>
-            <div className="p-4 text-3xl text-white font-bold flex justify-between items-center m-2 bg-blue-500 rounded-xl">
+            <div className="p-4 text-xl text-white font-bold flex justify-between items-center m-2 bg-[#111827] rounded-xl">
                 {comp_status.total} Total Complaints 
                 <Link to={`/${props.user}_login/fetch_complaints/total`}>
-                    <button id = "total" className="py-2 px-4 text-2xl bg-[#1f306e] rounded-xl text-white">View</button>
+                    <button id = "total" className="py-2 px-4 text-md bg-[#1f306e] rounded-xl text-white">View</button>
                 </Link>
             </div>
         </div>

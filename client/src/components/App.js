@@ -10,11 +10,13 @@ import AdminLogin from './admin/AdminLogin';
 const App = () => {
     return(
         <BrowserRouter>
+            <div className='bg-[#111827]'>
             <Switch>
                 <Route path='/user_login/dashboard' exact component={UserLogin}/>
                 <Route path='/admin_login/dashboard' exact component={AdminLogin}/>
                 <Route path='/' component={Home}/>
             </Switch>
+            </div>
             <ToastContainer/>
         </BrowserRouter>
     )

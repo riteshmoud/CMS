@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
-const NavBar = (props) => {
+const Sidebar = (props) => {
 
     const links = props.links.map((items)=>{
         return (
@@ -12,10 +12,10 @@ const NavBar = (props) => {
     })
 
     return (
-    <div>
-        <nav className="text-white text-xl flex justify-between m-auto p-2">
+    <div className='h-[100%]'>
+        <nav className="text-white text-xl flex flex-col justify-center items-stretch m-auto p-2">
             <h1 className='p-4 font-bold'>Complaint Management System</h1>
-            <ul className="flex justify-between">
+            <ul className="flex flex-col justify-between">
                 {links}
             </ul>
         </nav>
@@ -23,4 +23,4 @@ const NavBar = (props) => {
     )
 }
 
-export default NavBar
+export default Sidebar

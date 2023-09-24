@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './style/login.css'
 import Logo from '../Logo'
 
 
@@ -52,34 +53,34 @@ const Registration = () => {
     return (
         // <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
         //     <Logo/>
-        <div className='max-w-4xl flex justify-center flex-col bg-[#adcbe3] rounded-xl p-4'>
-            <h1 className="text-3xl text-center p-4">
+        <div className='flex justify-center flex-col bg-[#1f2937] shadow-sm shadow-cyan-400 rounded-xl p-4'>
+            {/* <h1 className="text-2xl text-center p-2">
                 User Registration
-            </h1>
+            </h1> */}
             <div className="flex justify-center items-center flex-col">
-                <form onSubmit={onFormSubmit} className="text-black">
-                    <div className="m-4">
-                        <input type="text" name = "fullname" id = "fullname" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" placeholder='Full Name' value={formData.fullname} onChange={onFormChange}/>
+                <form onSubmit={onFormSubmit} className="text-black w-full">
+                    <div className="m-2">
+                        <input type="text" name = "fullname" id = "fullname" className="border-none py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Full Name' value={formData.fullname} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="email" name = "email" id = "email" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" placeholder='Email ID' value={formData.email} onChange={onFormChange}/>
+                    <div className="m-2">
+                        <input type="email" name = "email" id = "email" className="border-none py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Email ID' value={formData.email} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="password" name = "password" id = "password" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" placeholder='Password' value={formData.password} onChange={onFormChange}/>
+                    <div className="m-2">
+                        <input type="password" name = "password" id = "password" className="border-none py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Password' value={formData.password} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="number" name = "contact" id = "contact" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" placeholder='Contact No' value={formData.contact} onChange={onFormChange}/>
+                    <div className="m-2">
+                        <input type="number" name = "contact" id = "contact" className="border-none py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Contact No' value={formData.contact} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-4 text-2xl font-medium rounded-xl text-white' value='Register'/>
+                    <div className="m-2">
+                        <input type="submit" className='border-none w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-2 text-lg font-medium rounded-xl text-white' value='Register'/>
                     </div>
                 </form>
-                <div className="my-4 text-xl">
+                <div className="my-2 text-lg">
                     Already Registered? 
                         <Link to="/users/SignIn" className='text-blue-500 hover:text-blue-900'> Sign In </Link>
                 </div>
             </div>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center p-2'>
                 <Logo/>
             </div>
             {/* <ToastContainer/> */}

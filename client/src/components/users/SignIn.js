@@ -46,33 +46,33 @@ const SignIn = () => {
     }
 
     return (
-        <div className='max-w-4xl flex justify-center flex-col bg-[#adcbe3] rounded-xl p-4'>
-            <h1 className="text-3xl text-center p-4">
+        <div className='flex justify-center flex-col bg-[#1f2937] shadow-sm shadow-cyan-400 rounded-xl p-4'>
+            {/* <h1 className="text-xl text-center ">
                 User Login
-            </h1>
+            </h1> */}
             <div className="flex justify-center items-center flex-col">
-                <form onSubmit={onFormSubmit}>
-                    <div className="m-4">
-                        <input type="email" name="email" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" placeholder='Username' value={formData.email} onChange={onFormChange}/>
+                <form onSubmit={onFormSubmit} className='w-full'>
+                    <div className="m-2">
+                        <input type="email" name="email" className="border-none w-full py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Username' value={formData.email} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="password" name="password" className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" placeholder='Password' value={formData.password} onChange={onFormChange}/>
+                    <div className="m-2">
+                        <input type="password" name="password" className="border-none w-full py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Password' value={formData.password} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-4 text-2xl font-medium rounded-xl text-white' value='Login'/>
+                    <div className="m-2">
+                        <input type="submit" className='border-none w-full p-2 text-lg w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 font-medium rounded-xl text-white' value='Login'/>
                     </div>
                 </form>
-                <div className="my-4">
+                <div className="my-2">
                     <p className="text-xl text-center m-2">
-                            <Link to="/" className='text-blue-500 hover:text-blue-900'>Forgot Password?</Link>
+                            <Link to="/" className='text-lg text-blue-500 hover:text-blue-900'>Forgot Password?</Link>
                     </p>
                     <p className="text-xl text-center m-2">
-                        <span className='text-blue-500'>Don't have an account? </span>
-                            <Link to="/users/Registration" className='text-red-500 hover:text-red-900'>Register Here</Link>
+                        <span className='text-lg text-blue-500'>Don't have an account? </span>
+                            <Link to="/users/Registration" className='text-red-500 hover:text-red-900 text-lg'>Register Here</Link>
                     </p>
                 </div>
             </div>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center '>
                 <Logo/>
             </div>
             {/* <ToastContainer/> */}

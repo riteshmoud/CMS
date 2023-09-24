@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from './NavBar'
 import UserSignIn from './users/SignIn'
 import Registration from './users/Registration'
 import AdminSignIn from './admin/SignIn'
 import {BrowserRouter,Route} from 'react-router-dom'
 import axios from 'axios'
 import { useEffect } from 'react'
+import NavBar from './NavBar'
 
 const Home = () => {
 
@@ -26,13 +26,15 @@ const Home = () => {
     return (
         <BrowserRouter>
         
-            <div className='h-screen'>
-                <NavBar links={[
-                    {name:'User Login',route:'/users/SignIn'},
-                    {name:'User Registration',route:'/users/Registration'},
-                    {name:'Admin Login',route:'/admin/SignIn'}
-                ]}/>
-                <div className="h-[100%] flex justify-center items-center bg-[#2a4d69]">
+            <div className='h-screen flex flex-col'>
+                <div className='m-[2rem] bg-[#1f2937] min-w-[70%] rounded-full self-center'>
+                    <NavBar links={[
+                        {name:'Login',route:'/users/SignIn'},
+                        {name:'Registration',route:'/users/Registration'},
+                        {name:'Admin',route:'/admin/SignIn'}
+                    ]}/>
+                </div>
+                <div className="flex justify-center items-center" style={{flexGrow: '1'}}>
                         <div>
                             <Route path='/' exact component={UserSignIn}/>
                             <Route path='/users/SignIn' exact component={UserSignIn}/>

@@ -1,0 +1,11 @@
+input:focus,textarea:focus,select:focus{
+    outline: none;
+}
+
+input{
+    border: none;
+}
+
+label{
+    color: white;
+}

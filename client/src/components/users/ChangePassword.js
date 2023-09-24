@@ -78,20 +78,20 @@ const ChangePassword = (props) => {
     }
 
     return (
-        <div className='max-w-4xl flex justify-center flex-col bg-[#adcbe3] rounded-xl p-4 m-8'>
-            <h1 className="text-3xl text-center p-4">
+        <div className='max-w-4xl flex justify-center flex-col bg-[#1f2937] rounded-xl p-4 m-8'>
+            <h1 className="text-2xl text-white p-2">
                 Change Password
             </h1>
             <div className="flex justify-center items-center flex-col">
-                <form onSubmit={onFormSubmit} className="text-black">
-                    <div className="m-4">
-                        <input type="password" name = "old_password" id = "old_password" placeholder='Old Password' className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" value={formData.old_password} onChange={onFormChange}/>
+                <form onSubmit={onFormSubmit} className="text-black w-full">
+                    <div className="m-2">
+                        <input type="password" name = "old_password" id = "old_password" placeholder='Old Password' className="py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" value={formData.old_password} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="password" name = "new_password" id = "new_password" placeholder='New Password' className="p-4 text-2xl w-[100%] border-black border-2 rounded-xl" value={formData.new_password} onChange={onFormChange}/>
+                    <div className="m-2">
+                        <input type="password" name = "new_password" id = "new_password" placeholder='New Password' className="py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" value={formData.new_password} onChange={onFormChange}/>
                     </div>
-                    <div className="m-4">
-                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-4 text-2xl font-medium rounded-xl text-white' value='Update'/>
+                    <div className="m-2">
+                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-2 text-lg font-medium rounded-xl text-white' value='Update'/>
                     </div>
                 </form>
             </div>

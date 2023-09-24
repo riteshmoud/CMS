@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './style/login.css'
 
 const LodgeComplaint = () => {
 
@@ -72,8 +73,8 @@ const LodgeComplaint = () => {
     }
 
     return (
-    <div className='w-[50%] p-6 bg-[#adcbe3] rounded-xl'>
-        <form onSubmit={onFormSubmit}>
+    <div className='p-6 bg-[#1f2937] rounded-xl min-w-[70%]'>
+        <form onSubmit={onFormSubmit} className='grid grid-cols-2 gap-y-2 gap-x-4'>
             <div className='flex flex-col'>
                 <label htmlFor="category" className='my-4'>Category</label>
                 <select name="category" id="category" className='p-2 w-[100%]' onChange={(e)=>formData.category = e.target.value}>
@@ -100,12 +101,12 @@ const LodgeComplaint = () => {
 
             <div className='flex flex-col'>
                 <label htmlFor="nature" className='my-4'>Nature of complaint</label>
-                <input type="text" name="nature" id="nature" className='p-4 w-[100%]' value={formData.nature} onChange={onFormChange}/>
+                <input type="text" name="nature" id="nature" className='p-2 w-[100%]' value={formData.nature} onChange={onFormChange}/>
             </div>
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col col-span-full'>
                 <label htmlFor="details" className='my-4'>Complaint Details</label>
-                <textarea name="details" id="details" rows={10} className='resize-none p-4' value={formData.details} onChange={onFormChange}></textarea>
+                <textarea name="details" id="details" rows={5} className='resize-none p-4' value={formData.details} onChange={onFormChange}></textarea>
             </div>
 
             <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../NavBar'
+import Sidebar from '../Sidebar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter,Route,Switch } from 'react-router-dom';
@@ -50,9 +50,9 @@ const AdminLogin = () => {
 
     return (
         <BrowserRouter>
-        <div className="min-h-screen">
-            <div className='flex bg-[#4b86b4] justify-center'>
-            <NavBar links={[
+        <div className="h-screen flex">
+            <div className='bg-[#1f2937] h-full flex flex-col justify-between '>
+            <Sidebar links={[
                     {name:'Dashboard',route:'/admin_login/dashboard'},
                     {name:'Users',route:'/admin_login/show_users'},
                     {name:'Add Details',route:'/admin_login/add_details'},
@@ -63,17 +63,17 @@ const AdminLogin = () => {
             </button>
             </div>
            
-            
-                <div className="flex justify-center items-center min-h-screen bg-[#2a4d69] relative">
+            <div className='grow flex items-center justify-center overflow-auto relative'>
+                {/* <div className="flex justify-center items-center min-w-[70%] self-start py-6"> */}
                     <Switch>
                         <Route path='/admin_login/dashboard' exact component={()=>(<Dashboard user='admin'/>)}/>
                         <Route path='/admin_login/fetch_complaints' component={() => (<ComplaintTable headings={['ID','User','Category','Sub Category','Date/Time','Status','']} user='admin'/>)}/>
                         <Route path='/admin_login/show_users' component={() => (<UsersTable headings={['User ID','Email','Full Name','Contact','State','Registered On','']} user='admin'/>)}/>
                         <Route path='/admin_login/add_details' component={AddDetails}/>
                         <Route path='/admin_login/change_password' exact component={()=>(<ChangePassword user = 'admin'/>)}/>
-                        
                     </Switch>
-                </div>
+                {/* </div> */}
+            </div>
         </div>
         </BrowserRouter>
     )

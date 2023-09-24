@@ -37,8 +37,8 @@ const AddDetails = () => {
             return (
                 <div>
                     <textarea name={e.target.id} id={e.target.id} cols='30' rows="5" className='w-[100%] p-4 m-4 overflow-hidden resize-none' placeholder={`Add ${e.target.id}`} value={data} onChange={onChange}></textarea>
-                    <button className='bg-green-600 rounded-xl text-2xl text-white px-4 py-2 ml-[0.5rem]' onClick={onPost}>Post</button>
-                    <button className='bg-red-500 rounded-xl text-2xl text-white px-4 py-2 ml-[0.5rem]' onClick={()=>setTextArea(null)}>Cancel</button>
+                    <button className='bg-green-600 rounded-xl text-xl text-white px-4 py-2 ml-[0.5rem]' onClick={onPost}>Post</button>
+                    <button className='bg-red-500 rounded-xl text-xl text-white px-4 py-2 ml-[0.5rem]' onClick={()=>setTextArea(null)}>Cancel</button>
                 </div>
             )
         })
@@ -52,8 +52,8 @@ const AddDetails = () => {
             return (
                 <div>
                     <textarea name={e.target.id} id={e.target.id} cols="30" rows="5" className='w-[100%] p-4 m-4 overflow-hidden resize-none' placeholder={placeholder} value='' onChange={onChange}></textarea>
-                    <button className='bg-green-600 rounded-xl text-2xl text-white px-4 py-2 ml-[0.5rem]' onClick={onPost}>Post</button>
-                    <button className='bg-red-500 rounded-xl text-2xl text-white px-4 py-2 ml-[0.5rem]' onClick={()=>{setTextArea(null)}}>Cancel</button>
+                    <button className='bg-green-600 rounded-xl text-xl text-white px-4 py-2 ml-[0.5rem]' onClick={onPost}>Post</button>
+                    <button className='bg-red-500 rounded-xl text-xl text-white px-4 py-2 ml-[0.5rem]' onClick={()=>{setTextArea(null)}}>Cancel</button>
                 </div>
             )
         })
@@ -62,9 +62,9 @@ const AddDetails = () => {
     return (
         <div className={`flex justify-between self-start my-8 p-4 flex-col`}>
             <div>
-                <button id="category" className="py-2 px-4 text-2xl text-black mx-4 bg-white rounded-xl" onClick={onAddBtnClick}>Add Category</button>
-                <button id="sub_category" className="py-2 px-4 text-2xl text-black mx-4 bg-white rounded-xl" onClick={onAddBtnClick}>Add Sub Category</button>
-                <button id="state" className="py-2 px-4 text-2xl text-black mx-4 bg-white rounded-xl" onClick={onAddBtnClick}>Add State</button>
+                <button id="category" className="py-2 px-4 text-xl text-black mx-4 bg-white rounded-xl" onClick={onAddBtnClick}>Add Category</button>
+                <button id="sub_category" className="py-2 px-4 text-xl text-black mx-4 bg-white rounded-xl" onClick={onAddBtnClick}>Add Sub Category</button>
+                <button id="state" className="py-2 px-4 text-xl text-black mx-4 bg-white rounded-xl" onClick={onAddBtnClick}>Add State</button>
             </div>
             {textArea}
         </div>
