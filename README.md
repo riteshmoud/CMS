@@ -45,10 +45,9 @@ Our project is having two parts
 
 Make a user with username 'admin' and keep password 'admin@123' in MySQL workbench
 
-Then, import the database file provided below into MySql Workbench
+Make a database with name "cms"
 
-Link - https://drive.google.com/drive/folders/1gOwtwXTXfEDFKROZxKLF5_mJiJP0Cj8q?usp=share_link
-
+Then, import the database schema files provided in CMS_schema folder into the database
 
 Clone the repository
 
@@ -82,6 +81,8 @@ Make sure you are in client folder
 ```bash
   npm start
 ```
+
+Note that - For admin, username is "admin" and password is "admin@123"
 
 
     
