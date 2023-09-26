@@ -5,8 +5,9 @@ const sessions = require('express-session')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt')
-
 const app = express()
+
+const accounts = require('./api/user/account')
 
 // used in bcrypt function
 const saltRounds = 10
@@ -97,19 +98,7 @@ app.post('/api/user_registration',async (req,res)=>{
     }
 })
 
-app.post('/api/user_signin',async (req,res)=>{
-    const {email,password} = req.body.formData
-    if(await userExists(email)){
-        if(await validatePassword(email,password)){
-            req.session.user = authorizedUser
-            res.status(200).send('User logged in')
-        }else{
-            res.status(400).send("Invalid password!")
-        }
-    }else{
-        res.status(400).send("Not a valid user!")
-    }
-})
+app.post('/api/user_signin',accounts.userSignIn)
 
 // handles user updation
 app.post('/api/user_update',async (req,res)=>{
