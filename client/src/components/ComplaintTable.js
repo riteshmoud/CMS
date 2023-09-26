@@ -54,7 +54,6 @@ const ComplaintTable = (props) => {
             }
         }
         fetch_complaints()
-        console.log(list);
     },[details])
 
     const onViewClick = (e) => {
@@ -92,7 +91,7 @@ const ComplaintTable = (props) => {
                 <td className='p-4'>{comp.sub_category}</td>
                 <td className='p-4'>{comp.date_time}</td>
                 <td className={`p-4 ${status}`}>{comp.status}</td>
-                {addRemarks(comp)}
+                {/* {addRemarks(comp)} */}
                 <td className='p-4'>
                     {/* <i id = {idx} class="p-2 text-md rounded-xl text-red-500 cursor-pointer fa-solid fa-trash" onClick={onViewClick}></i> */}
                     <button id = {idx} className="py-2 px-4 text-md bg-[#1f306e] rounded-xl text-white" onClick={onViewClick}>View</button>

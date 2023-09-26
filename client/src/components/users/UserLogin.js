@@ -59,7 +59,7 @@ const UserLogin = () => {
                         {name:'Change Password',route:'/user_login/change_password'},
                         {name:'My Account',route:'/user_login/my_account'},
                 ]}/>
-                <button className="px-4 py-2 text-lg bg-red-500 text-white self-center rounded-xl w-full m-2" onClick={userLogout}>
+                <button className="px-4 py-2 text-lg bg-red-600 text-white self-center hover:bg-red-500 rounded-xl w-[80%] m-2" onClick={userLogout}>
                     Logout
                 </button>
             </div>
@@ -70,7 +70,7 @@ const UserLogin = () => {
                         <Route path='/user_login/lodge_complaint' exact component={LodgeComplaint}/>
                         <Route path='/user_login/change_password' exact component={()=>(<ChangePassword user='user'/>)}/>
                         <Route path='/user_login/my_account' exact component={UserProfile}/>
-                        <Route path='/user_login/fetch_complaints' component={() => (<ComplaintTable headings={['ID','Category','Sub Category','Date/Time','Status','Remarks','']} user='user'/>)}/>
+                        <Route path='/user_login/fetch_complaints' component={() => (<ComplaintTable headings={['ID','Category','Sub Category','Date/Time','Status','']} user='user'/>)}/>
                     </Switch>
                 {/* </div>    */}
             </div>

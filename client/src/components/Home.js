@@ -29,7 +29,7 @@ const Home = () => {
             <div className='h-screen flex flex-col'>
                 <div className='m-[2rem] bg-[#1f2937] min-w-[70%] rounded-full self-center'>
                     <NavBar links={[
-                        {name:'Login',route:'/users/SignIn'},
+                        {name:'Login',route:'/'},
                         {name:'Registration',route:'/users/Registration'},
                         {name:'Admin',route:'/admin/SignIn'}
                     ]}/>

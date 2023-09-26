@@ -48,19 +48,19 @@ const Dashboard = (props) => {
             <div className="p-4 text-xl text-white font-bold flex justify-between items-center m-2 bg-[#111827] rounded-xl">
                 {comp_status.pending} Pending Complaints 
                 <Link to={`/${props.user}_login/fetch_complaints/pending`}>
-                    <button id = "pending" className="py-2 px-4 text-md bg-[#1f306e] rounded-xl text-white">View</button>
+                    <button id = "pending" className="py-2 px-4 text-md font-normal bg-[#1f306e] hover:bg-blue-900 rounded-xl text-white">View</button>
                 </Link>
             </div>
             <div className="p-4 text-xl text-white font-bold flex justify-between items-center m-2 bg-[#111827] rounded-xl">
                 {comp_status.completed} Complaints Resolved
                 <Link to={`/${props.user}_login/fetch_complaints/completed`}>
-                    <button id = "completed" className="py-2 px-4 text-md bg-[#1f306e] rounded-xl text-white">View</button>
+                    <button id = "completed" className="py-2 px-4 text-md font-normal bg-[#1f306e] hover:bg-blue-900 rounded-xl text-white">View</button>
                 </Link>
             </div>
             <div className="p-4 text-xl text-white font-bold flex justify-between items-center m-2 bg-[#111827] rounded-xl">
                 {comp_status.total} Total Complaints 
                 <Link to={`/${props.user}_login/fetch_complaints/total`}>
-                    <button id = "total" className="py-2 px-4 text-md bg-[#1f306e] rounded-xl text-white">View</button>
+                    <button id = "total" className="py-2 px-4 text-md font-normal bg-[#1f306e] hover:bg-blue-900 rounded-xl text-white">View</button>
                 </Link>
             </div>
         </div>

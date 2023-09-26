@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './style/login.css'
+import Button from '../Button';
 
 const LodgeComplaint = () => {
 
@@ -109,8 +110,8 @@ const LodgeComplaint = () => {
                 <textarea name="details" id="details" rows={5} className='resize-none p-4' value={formData.details} onChange={onFormChange}></textarea>
             </div>
 
-            <div>
-                <input type="submit" value="Submit" className='my-4 py-4 px-6 bg-black rounded-xl text-white'/>
+            <div className='col-span-full'>
+                <Button value='Submit'/>
             </div>
         </form>
     </div>

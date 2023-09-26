@@ -6,7 +6,7 @@ const NavBar = (props) => {
     const links = props.links.map((items)=>{
         return (
             <li className="p-4">
-                <NavLink to={items.route} className='hover:text-[#ffff00] font-bold' activeStyle={{color:'yellow',fontWeight: 'bolder'}}>{items.name}</NavLink>
+                <NavLink to={items.route} exact className='hover:text-[#ffff00] font-bold' activeStyle={{color:'yellow',fontWeight: 'bolder'}}>{items.name}</NavLink>
             </li>
         )
     })

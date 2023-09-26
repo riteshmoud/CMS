@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Logo from '../Logo'
 import { useEffect } from 'react';
 import './style/login.css'
+import Button from '../Button';
 
 
 const UserProfile = () => {
@@ -101,7 +102,7 @@ const UserProfile = () => {
                         <input type="number" name = "contact" id = "contact" className="p-2 text-lg w-[100%] border-black border-2 rounded-xl"  value={formData.contact} onChange={onFormChange}/>
                     </div>
                     <div className="m-2 col-span-full">
-                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-2 text-lg font-medium rounded-xl text-white' value='Update'/>
+                        <Button value='Update'/>
                     </div>
                 </form>
             </div>

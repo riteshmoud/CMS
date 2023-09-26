@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './style/login.css'
 import Logo from '../Logo'
+import Button from '../Button';
 
 
 const Registration = () => {
@@ -72,12 +73,12 @@ const Registration = () => {
                         <input type="number" name = "contact" id = "contact" className="border-none py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Contact No' value={formData.contact} onChange={onFormChange}/>
                     </div>
                     <div className="m-2">
-                        <input type="submit" className='border-none w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-2 text-lg font-medium rounded-xl text-white' value='Register'/>
+                        <Button value='Register'/>
                     </div>
                 </form>
-                <div className="my-2 text-lg">
+                <div className="my-2 text-lg text-white">
                     Already Registered? 
-                        <Link to="/users/SignIn" className='text-blue-500 hover:text-blue-900'> Sign In </Link>
+                        <Link to="/users/SignIn" className='text-blue-500 hover:text-blue-300'> Sign In </Link>
                 </div>
             </div>
             <div className='flex justify-center items-center p-2'>

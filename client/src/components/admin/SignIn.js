@@ -4,6 +4,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Logo from '../Logo'
+import Button from '../Button';
 
 const SignIn = () => {
 
@@ -53,7 +54,7 @@ const SignIn = () => {
                         <input type="password" name="password" id="password" className="border-none py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Password' value={formData.password} onChange={onFormChange}/>
                     </div>
                     <div className="m-2">
-                        <input type="submit" className='border-none w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-2 text-lg font-medium rounded-xl text-white' value='Login'/>
+                        <Button value='Login'/>
                     </div>
                 </form>
             </div>

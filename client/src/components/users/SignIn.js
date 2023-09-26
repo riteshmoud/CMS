@@ -6,6 +6,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react'
+import Button from '../Button'
 
 const SignIn = () => {
 
@@ -59,16 +60,16 @@ const SignIn = () => {
                         <input type="password" name="password" className="border-none w-full py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" placeholder='Password' value={formData.password} onChange={onFormChange}/>
                     </div>
                     <div className="m-2">
-                        <input type="submit" className='border-none w-full p-2 text-lg w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 font-medium rounded-xl text-white' value='Login'/>
+                        <Button value='Login'/>
                     </div>
                 </form>
                 <div className="my-2">
                     <p className="text-xl text-center m-2">
-                            <Link to="/" className='text-lg text-blue-500 hover:text-blue-900'>Forgot Password?</Link>
+                            <Link to="/" className='text-lg text-blue-500 hover:text-blue-300'>Forgot Password?</Link>
                     </p>
                     <p className="text-xl text-center m-2">
                         <span className='text-lg text-blue-500'>Don't have an account? </span>
-                            <Link to="/users/Registration" className='text-red-500 hover:text-red-900 text-lg'>Register Here</Link>
+                            <Link to="/users/Registration" className='text-red-500 hover:text-red-300 text-lg'>Register Here</Link>
                     </p>
                 </div>
             </div>

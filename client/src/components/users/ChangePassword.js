@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Logo from '../Logo'
 import { useEffect } from 'react';
+import Button from '../Button';
 
 
 const ChangePassword = (props) => {
@@ -91,7 +92,7 @@ const ChangePassword = (props) => {
                         <input type="password" name = "new_password" id = "new_password" placeholder='New Password' className="py-2 px-4 text-lg w-[100%] border-black border-2 rounded-xl" value={formData.new_password} onChange={onFormChange}/>
                     </div>
                     <div className="m-2">
-                        <input type="submit" className='w-[100%] bg-blue-500 hover:cursor-pointer hover:bg-blue-800 p-2 text-lg font-medium rounded-xl text-white' value='Update'/>
+                        <Button value='Update'/>
                     </div>
                 </form>
             </div>

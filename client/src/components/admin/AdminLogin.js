@@ -58,7 +58,7 @@ const AdminLogin = () => {
                     {name:'Add Details',route:'/admin_login/add_details'},
                     {name:'Change Password',route:'/admin_login/change_password'},
             ]}/>
-            <button className="px-4 py-2 text-2xl bg-red-500 text-white self-center rounded-xl" onClick={adminLogout}>
+            <button className="px-4 py-2 text-lg bg-red-600 text-white self-center hover:bg-red-500 rounded-xl w-[80%] m-2" onClick={adminLogout}>
                 Logout
             </button>
             </div>
