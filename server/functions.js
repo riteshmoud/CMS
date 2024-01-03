@@ -1,3 +1,6 @@
+const {db} = require('./db')
+const bcrypt = require('bcrypt')
+
 // check if email already exists
 const userExists = async (email) => {
     const searchQuery = 'SELECT users.email FROM users WHERE users.email = ?'
@@ -8,13 +11,13 @@ const userExists = async (email) => {
     return (results.length !== 0)
 }
 
-const validatePassword = async (email,pass) => {
+const validatePassword = async (email,pass,authUser) => {
     const validateQuery = 'SELECT * FROM users WHERE users.email = ?'
     const [results] = await db.execute(
         validateQuery,
         [email]
     )
-    authorizedUser = results[0]
+    authUser.user = results[0]
     return bcrypt.compareSync(pass,results[0].password)
 }
 
